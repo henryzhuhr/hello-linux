@@ -1,0 +1,15 @@
+services:
+  hello-linux-ubuntu:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile
+    image: hello-linux-ubuntu:latest  # 构建后镜像的名称和标签
+    environment:
+      APP_ENV: development
+    volumes:
+      - ~/.ssh:/root/.ssh:ro  # 挂载宿主机的ssh配置文件，方便推拉代码（只读）
+      - .:/root/hello-linux   # 挂载宿主机的项目目录到容器中
+    working_dir: /root/hello-linux
+    network_mode: "host" # 开发环境使用 host 网络模式，方便调试
+    # sleep infinity 用于保持容器运行，否则 vscode 无法进入容器，建议写在 .devcontainer/docker-compose.yml 文件中
+    command: ["sleep", 'infinity']

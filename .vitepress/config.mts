@@ -4,6 +4,14 @@ import { DefaultTheme, defineConfig } from 'vitepress'
  * 侧边栏配置: https://vitepress.dev/zh/reference/default-theme-sidebar
  */
 const sidebar: DefaultTheme.Sidebar = [
+  {
+    collapsed: false,
+    text: '环境准备',
+    base: '/starter/',
+    items: [
+      { text: '在容器中开发 Linux', link: '/install-docker' },
+    ]
+  },
 ]
 
 /**
