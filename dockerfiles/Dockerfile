@@ -10,7 +10,7 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y \
     ca-certificates locales \
     git \
-    vim
+    vim 
 
 # 清理 apt 缓存，减小镜像体积；如果需要继续使用 apt-get 命令，可以注释掉该行
 # RUN rm -rf /var/lib/apt/lists/*

@@ -10,6 +10,7 @@ const sidebar: DefaultTheme.Sidebar = [
     base: '/starter/',
     items: [
       { text: '在容器中开发 Linux', link: '/install-docker' },
+      { text: '快速上手 Ubuntu', link: '/ubuntu-go' },
     ]
   },
 ]
